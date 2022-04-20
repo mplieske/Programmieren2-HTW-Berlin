@@ -47,7 +47,7 @@ namespace MathLibrary
         /// <returns>This PointVectorBase as a Point.</returns>
         public Point AsPoint()
         {
-            return (Point)this;
+            return new Point(X, Y, Z);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace MathLibrary
         /// <returns>This PointVectorbase as a Vector.</returns>
         public Vector AsVector()
         {
-            return (Vector)this;
+            return new Vector(X, Y, Z);
         }
 
         /// <summary>
@@ -90,9 +90,9 @@ namespace MathLibrary
         /// <returns>PointVectorBase representing the sum of addends.</returns>
         protected PointVectorBase CalculateSum(params Vector[] addends)
         {
-            double sumX = 0;
-            double sumY = 0;
-            double sumZ = 0;
+            double sumX = X;
+            double sumY = Y;
+            double sumZ = Z;
 
             foreach (Vector addend in addends)
             {

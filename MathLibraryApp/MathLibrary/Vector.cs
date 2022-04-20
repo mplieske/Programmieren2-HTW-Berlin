@@ -60,17 +60,13 @@ namespace MathLibrary
         /// <returns>Returns the difference between this Vector and subtrahends.</returns>
         public Vector Subtract(params Vector[] subtrahends)
         {
-            Vector firstSubtrahend = new Vector(subtrahends[0]);
+            Vector sumOfSubtrahends = new Vector(Zero).Add(subtrahends);
+            Console.WriteLine($"Sum of subtrahends: '{sumOfSubtrahends}'");
+            Vector difference = new Vector(this.X - sumOfSubtrahends.X, this.Y - sumOfSubtrahends.Y, this.Z - sumOfSubtrahends.Z);
 
-            for (int i = 1; i < subtrahends.Length; i++)
-            {
-                firstSubtrahend.X -= subtrahends[i].X;
-                firstSubtrahend.Y -= subtrahends[i].Y;
-                firstSubtrahend.Z -= subtrahends[i].Z;
-            }
-
-            return firstSubtrahend;
+            return difference;
         }
+
 
         /// <summary>
         /// Multiplies this Vector salar.
