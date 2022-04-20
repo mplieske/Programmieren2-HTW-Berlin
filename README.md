@@ -8,4 +8,4 @@ Ich garantiere nicht für die Richtigheit meiner Ergebnisse und rate generell da
 
 ## Woche 1
 
-- **[MathLibraryApp](./MathLibraryApp/MathLibraryApp/Program.cs):** 10/10
+- **[MathLibraryApp](./MathLibraryApp/):** 10/10
