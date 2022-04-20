@@ -10,6 +10,7 @@ namespace MathLibraryApp
     {
         static void Main(string[] args)
         {
+            Math.Sqrt
         }
     }
 }

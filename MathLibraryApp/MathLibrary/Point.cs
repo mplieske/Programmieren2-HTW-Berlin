@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MathLibrary
 {
+    /// <summary>
+    /// A simple class representing a mathematical Point with methods to work with it. Base class is PointVectorBase.
+    /// </summary>
     public class Point : PointVectorBase
     {
         public static readonly Point Origin = new Point();
