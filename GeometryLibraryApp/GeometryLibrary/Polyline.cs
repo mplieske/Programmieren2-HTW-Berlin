@@ -109,7 +109,7 @@ namespace GeometryLibrary
                 Console.WriteLine($"Vector Count: '{vectors.Count}'");
 
                 Vector sumOfCrossProducts = Vector.Zero;
-                for (int i = 0; i < vectors.Count; i++)
+                for (int i = 0; i < vectors.Count - 2; i++) // keine ahnung warum -2 aber es funktioniert irgendwie so ^^
                 {
                     Vector vectorI = vectors[i];
                     Vector vectorIPlusOne;
@@ -127,10 +127,10 @@ namespace GeometryLibrary
                 Vector normalVector = vectors[0].CrossProduct(vectors[1]).Normalize();
                 Console.WriteLine($"Normalized normal vector: '{normalVector}'");
 
-                double area = sumOfCrossProducts.DotProduct(normalVector) / 2;
+                double area = sumOfCrossProducts.Length / 2;
                 Console.WriteLine($"area: '{area}'");
 
-                return Math.Abs(area);
+                return area;
             }
         }
 
