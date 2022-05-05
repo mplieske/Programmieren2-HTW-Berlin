@@ -23,6 +23,10 @@ namespace GeometryLibraryApp
             points.Add(p0);
             points.Add(p1);
             points.Add(p2);
+            points.Add(p3);
+            points.Add(p4);
+            points.Add(p5);
+            points.Add(p6);
             points.Add(p0);
             Polyline line = new Polyline(points.ToArray());
 

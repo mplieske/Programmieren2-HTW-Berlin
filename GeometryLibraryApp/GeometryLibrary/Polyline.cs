@@ -100,36 +100,20 @@ namespace GeometryLibrary
                 }
                 Console.WriteLine("Area: Is Planar and Closed :)");
 
-
-                List<Vector> vectors = new List<Vector>();
-                for (int i = 1; i < _points.Count; i++)
-                {
-                    vectors.Add(CreateVectorBetweenPoints(_points[i - 1], _points[i]));
-                }
-                Console.WriteLine($"Vector Count: '{vectors.Count}'");
-
                 Vector sumOfCrossProducts = Vector.Zero;
-                for (int i = 0; i < vectors.Count - 2; i++) // keine ahnung warum -2 aber es funktioniert irgendwie so ^^
+                for (int i = 0; i < _points.Count; i++)
                 {
-                    Vector vectorI = vectors[i];
-                    Vector vectorIPlusOne;
-                    vectorIPlusOne = i + 1 == vectors.Count ? vectors[0] : vectors[i + 1];
+                    Vector iVector = _points[i].AsVector();
+                    Vector iPlusOneVector =
+                        i + 1 == _points.Count ?
+                        _points[0].AsVector() :
+                        _points[i + 1].AsVector();
 
-                    Console.WriteLine($"vectorI: '{vectorI}'; vectorIPlusOne: '{vectorIPlusOne}'");
-
-                    Console.WriteLine($"Crossproduct of '{i}' and '{i + 1}' = '{vectorI.CrossProduct(vectorIPlusOne)}'");
-
-                    sumOfCrossProducts = sumOfCrossProducts.Add(vectorI.CrossProduct(vectorIPlusOne));
-                    Console.WriteLine($"Sum of Crossproducts: '{sumOfCrossProducts}'");
+                    Vector crossProduct = iVector.CrossProduct(iPlusOneVector);
+                    sumOfCrossProducts = sumOfCrossProducts.Add(crossProduct);
                 }
-
-
-                Vector normalVector = vectors[0].CrossProduct(vectors[1]).Normalize();
-                Console.WriteLine($"Normalized normal vector: '{normalVector}'");
 
                 double area = sumOfCrossProducts.Length / 2;
-                Console.WriteLine($"area: '{area}'");
-
                 return area;
             }
         }
