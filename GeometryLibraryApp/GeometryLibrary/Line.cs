@@ -25,7 +25,7 @@ namespace GeometryLibrary
         /// <summary>
         /// The length of this Line (distance between StartPoint and EndPoint.
         /// </summary>
-        public override double Length { get; }
+        public override double Length { get { return StartPoint.DistanceTo(EndPoint); } }
 
         /// <summary>
         /// The direction of this Line (if you could say so).
@@ -42,7 +42,6 @@ namespace GeometryLibrary
         {
             StartPoint = startPoint;
             EndPoint = endPoint;
-            Length = startPoint.DistanceTo(endPoint);
 
             double deltaX = endPoint.X - startPoint.X;
             double deltaY = endPoint.Y - startPoint.Y;

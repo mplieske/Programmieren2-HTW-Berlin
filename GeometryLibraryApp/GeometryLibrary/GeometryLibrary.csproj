@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Circle.cs" />
     <Compile Include="Curve.cs" />
+    <Compile Include="ISurface.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Polyline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,7 +10,7 @@ namespace GeometryLibrary
     /// <summary>
     /// Circle represents circle in a 3D room.
     /// </summary>
-    public class Circle : Curve
+    public class Circle : Curve, ISurface
     {
         /// <summary>
         /// The center of this Circle.
@@ -31,6 +31,8 @@ namespace GeometryLibrary
         /// The perimeter of this Circle.
         /// </summary>
         public override double Length { get; }
+
+        public double Area { get { return Math.PI * Math.Pow(Radius, 2); } }
 
         /// <summary>
         /// Creates an object of Type Circle with given parameters.
