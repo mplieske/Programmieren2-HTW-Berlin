@@ -13,3 +13,7 @@ Ich garantiere nicht für die Richtigheit meiner Ergebnisse und rate generell da
 ## Woche 2
 
 - **[GeometryLibrary](./GeometryLibraryApp/):** 10/10
+
+## Woche 3
+
+- **[GeometryEditorApp](./GeometryEditorApp/):** 10/10
