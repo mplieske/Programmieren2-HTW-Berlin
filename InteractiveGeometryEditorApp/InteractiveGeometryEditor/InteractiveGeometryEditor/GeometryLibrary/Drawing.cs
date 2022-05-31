@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Text;
 using MathLibrary;
 using Point = MathLibrary.Point;
+using System.Linq;
 
 namespace GeometryLibrary
 {
@@ -56,6 +57,33 @@ namespace GeometryLibrary
         public Drawing(Curve[] curves)
         {
             _curves.AddRange(curves);
+        }
+
+        /// <summary>
+        /// Gets all Curves of type Line.
+        /// </summary>
+        /// <returns>Returns a CurveContainer<Line> containing all Curves of type Line.</returns>
+        public CurveContainer<Line> GetLines()
+        {
+            return (CurveContainer<Line>)(from curve in _curves where curve is Line select curve);
+        }
+
+        /// <summary>
+        /// Gets all Curves of type Circle.
+        /// </summary>
+        /// <returns>Returns a CurveContainer<Circle> containing all Curves of type Circle.</returns>
+        public CurveContainer<Circle> GetCircles()
+        {
+            return (CurveContainer<Circle>)(from curve in _curves where curve is Circle select curve);
+        }
+
+        /// <summary>
+        /// Gets all Curves of type Polyline.
+        /// </summary>
+        /// <returns>Returns a CurveContainer<Polyline> containing all Curves of type Polyline.</returns>
+        public CurveContainer<Polyline> GetPolylines()
+        {
+            return (CurveContainer<Polyline>)(from curve in _curves where curve is Polyline select curve);
         }
     }
 }

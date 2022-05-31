@@ -9,7 +9,7 @@ namespace GeometryLibrary
     /// A Collection of Curves.
     /// </summary>
     /// <typeparam name="T">Type of Curve to be contained.</typeparam>
-    internal class CurveContainer<T> : List<T> where T : Curve
+    public class CurveContainer<T> : List<T> where T : Curve
     {
         /// <summary>
         /// Draws each element contained in this container.
